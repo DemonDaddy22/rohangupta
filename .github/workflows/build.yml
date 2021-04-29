@@ -21,12 +21,12 @@ jobs:
                   npm install
                   npm run build
             - name: Deploy Application to GH Pages
+              uses: JamesIves/github-pages-deploy-action@4.1.1
               with:
                   branch: gh-pages
                   folder: build
                   clean: true
-              run: |
-                  git config user.email ${{ secrets.EMAIL }}
-                  git config user.name ${{ secrets.USERNAME }}
-                  git remote set-url origin https://${{ secrets.PERSONAL_ACCESS_TOKEN }}@github.com/${{ secrets.USERNAME }}/${{ secrets.REPO_NAME }}.git
-                  npm run deploy
+                  token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+                  git-config-name: ${{ secrets.USERNAME }}
+                  git-config-email: ${{ secrets.EMAIL }}
+                  repository-name: ${{ secrets.REPO_NAME }}
