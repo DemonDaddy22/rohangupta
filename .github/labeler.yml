@@ -1,0 +1,17 @@
+
+modules:
+    - node_modules/*
+    - node_modules/**/*
+
+source:
+    - src/**/*
+
+documentation:
+    - "*.md"
+
+workflow:
+    - ".github/*"
+    - "*.yml"
+
+package:
+    - package.json
