@@ -1,0 +1,29 @@
+
+modules:
+    - node_modules/*
+    - node_modules/**/*
+
+source:
+    - src/*
+    - src/**/*
+    - public/*
+    - public/**/*
+
+documentation:
+    - '*.md'
+
+package:
+    - package.json
+    - package-lock.json
+
+config:
+    - .eslintrc.js
+    - .eslintignore
+    - tsconfig.json
+    - .env
+    - .env.*
+    - .vscode/*
+
+workflow:
+    - '.github/*'
+    - '.github/**/*'
