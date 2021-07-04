@@ -3,6 +3,7 @@ import Description from './components/Description';
 import Ripples from './components/Ripples';
 import './App.scss';
 import ShootingStars from './components/ShootingStars';
+import SocialMediaIcons from './components/SocialMediaIcons';
 
 function App() {
     return (
@@ -11,6 +12,7 @@ function App() {
             <div className="contentContainer">
                 <Header />
                 <Description />
+                <SocialMediaIcons />
             </div>
             <Ripples />
         </div>

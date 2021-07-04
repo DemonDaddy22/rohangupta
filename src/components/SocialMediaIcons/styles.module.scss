@@ -1,0 +1,17 @@
+.iconsContainer {
+    margin-top: 1.5rem;
+    display: flex;
+    gap: 1rem;
+
+    .icon {
+        outline: none;
+        filter: saturate(25%);
+        transform: translateY(0);
+        transition: filter 0.2s, transform 0.2s;
+
+        &:hover {
+            filter: saturate(100%);
+            transform: translateY(-0.15rem);
+        }
+    }
+}
