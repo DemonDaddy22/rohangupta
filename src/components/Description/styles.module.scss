@@ -26,5 +26,9 @@
         font-size: 0.9rem;
         line-height: 1.35rem;
         margin-top: 0.5rem;
+
+        @media (min-width: 1500px) {
+            font-size: 1rem;
+        }
     }
 }

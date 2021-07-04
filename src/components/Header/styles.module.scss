@@ -4,6 +4,10 @@
         color: #c8dfd1;
         font-weight: 600;
         font-size: 0.9rem;
+
+        @media (min-width: 1500px) {
+            font-size: 0.95rem;
+        }
     }
 
     .primaryText {
