@@ -1,4 +1,5 @@
 import React from 'react';
+import { THEME_COLORS } from '../../resources/theme';
 
 /* eslint-disable max-len */
 const Instagram: React.FC<{ style?: React.CSSProperties; color?: string }> =
@@ -27,5 +28,5 @@ Instagram.defaultProps = {
         height: 20,
         width: 20,
     },
-    color: '#58F898',
+    color: THEME_COLORS.COLOR3,
 };
