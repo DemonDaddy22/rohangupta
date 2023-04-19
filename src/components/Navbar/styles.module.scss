@@ -1,0 +1,38 @@
+@import '../../utils/mixins.scss';
+@import '../../resources/theme.scss';
+
+.navbar {
+    @include colourWithOpacity(background-color, $accent-colour-6, 0.25);
+    @include spacing(0 0.5rem);
+    position: fixed;
+    bottom: 1rem;
+    left: 50%;
+    transform: translate(-50%, 0) scale(0.8);
+    display: flex;
+    flex-direction: row;
+    border-radius: 4rem;
+    backdrop-filter: blur(2px);
+    overflow: hidden;
+    z-index: 10000;
+
+    @media (min-width: 1200px) {
+        @include spacing(0.5rem 0);
+        top: 50%;
+        left: 2rem;
+        bottom: initial;
+        transform: translate(0, -50%) scale(1);
+        flex-direction: column;
+    }
+}
+
+.navbarItem {
+    @include spacing(1rem);
+
+    @media (min-width: 1200px) {
+        @include spacing(0.5rem 1rem);
+    }
+
+    &:hover {
+        cursor: pointer;
+    }
+}

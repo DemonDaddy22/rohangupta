@@ -1,0 +1,151 @@
+@import '../../resources/theme.scss';
+@import '../../utils/mixins.scss';
+
+.experienceSection {
+    position: relative;
+
+    @media (min-width: 900px) {
+        @include spacing(0, 4rem 0);
+    }
+}
+
+.experienceTitle {
+    @include colourWithOpacity(color, $theme-colour-15);
+    font-size: 3rem;
+    letter-spacing: -0.5px;
+
+    @media (min-width: 900px) {
+        font-size: 3.5rem;
+    }
+
+    @media (min-width: 900px) {
+        font-size: 4rem;
+    }
+}
+
+.lineDotted {
+    @include spacing(0, 0 0 2rem);
+    border-top: 0.3rem dotted rgba($color: $theme-colour-16, $alpha: 0.75);
+    width: 100%;
+
+    @media (min-width: 900px) {
+        @include spacing(0, 0 0 4rem);
+        width: 50%;
+    }
+}
+
+.tilesContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.tile {
+    position: relative;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    border-radius: 1rem;
+    min-height: 30rem;
+    box-shadow: 0 4px 10px rgba($color: $black, $alpha: 0.6), 0 8px 16px rgba($color: $black, $alpha: 0.4);
+    overflow: hidden;
+
+    @media (min-width: 1200px) {
+        flex-direction: row;
+    }
+
+    &:nth-of-type(1) {
+        .contentTitle {
+            @include colourWithOpacity(color, $theme-colour-13);
+        }
+
+        .contentDescription {
+            @include colourWithOpacity(color, $theme-colour-14);
+        }
+    }
+
+    &:nth-of-type(2) {
+        .contentTitle {
+            @include colourWithOpacity(color, $theme-colour-17);
+        }
+
+        .contentDescription {
+            @include colourWithOpacity(color, $theme-colour-18);
+        }
+    }
+
+    &:nth-of-type(3) {
+        .contentTitle {
+            @include colourWithOpacity(color, $theme-colour-15);
+        }
+
+        .contentDescription {
+            @include colourWithOpacity(color, $theme-colour-16);
+        }
+    }
+}
+
+.tileMain {
+    @include colourWithOpacity(background-color, $accent-colour-3);
+    @include spacing(0.75rem 1rem);
+    display: flex;
+    flex-direction: column;
+    flex: 3;
+
+    @media (min-width: 1200px) {
+        flex: 2;
+    }
+}
+
+.tileContent {
+    @include spacing(1rem);
+    @include colourWithOpacity(background-color, $accent-colour-4);
+    flex: 5;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.contentTitle {
+    font-weight: 600;
+    font-size: 1.1rem;
+    letter-spacing: -0.5px;
+}
+
+.contentDescription {
+    font-size: 0.9rem;
+}
+
+.company {
+    @include spacing(0, 0.1rem);
+    @include colourWithOpacity(color, $light, 0.8);
+    font-size: 2rem;
+    font-weight: 300;
+    letter-spacing: -0.5px;
+    text-transform: uppercase;
+}
+
+.position {
+    @include spacing(0, 0.2rem);
+    @include colourWithOpacity(color, $white);
+    font-weight: 500;
+    font-size: 1.25rem;
+    letter-spacing: -0.25px;
+}
+
+.footer {
+    @include spacing (2rem 0 0);
+    flex: 1;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.duration,
+.location {
+    @include colourWithOpacity(color, $light, 0.8);
+    font-size: 0.9rem;
+    font-weight: 400;
+    letter-spacing: -0.5px;
+}

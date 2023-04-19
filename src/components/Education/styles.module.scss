@@ -1,0 +1,134 @@
+@import '../../resources/theme.scss';
+@import '../../utils/mixins.scss';
+
+.educationSection {
+    position: relative;
+
+    @media (min-width: 900px) {
+        @include spacing(0, 4rem 0);
+    }
+}
+
+.educationTitle {
+    @include colourWithOpacity(color, $theme-colour-11);
+    font-size: 3rem;
+    letter-spacing: -0.5px;
+
+    @media (min-width: 900px) {
+        font-size: 3.5rem;
+    }
+
+    @media (min-width: 900px) {
+        font-size: 4rem;
+    }
+}
+
+.lineDotted {
+    @include spacing(0, 0 0 2rem);
+    border-top: 0.3rem dotted rgba($color: $theme-colour-12, $alpha: 0.75);
+    width: 100%;
+
+    @media (min-width: 900px) {
+        @include spacing(0, 0 0 4rem);
+        width: 50%;
+    }
+}
+
+.tilesContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    @media (min-width: 900px) {
+        flex-direction: row;
+        gap: 3rem;
+    }
+}
+
+.tile {
+    @include spacing(0.75rem 1rem);
+    position: relative;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    border-radius: 1rem;
+    min-height: 20rem;
+    box-shadow: 0 4px 10px rgba($color: $black, $alpha: 0.6), 0 8px 16px rgba($color: $black, $alpha: 0.4);
+
+    &:nth-of-type(1) {
+        background: linear-gradient(135deg, $theme-colour-7, 15%, $accent-colour-2);
+    }
+
+    &:nth-of-type(2) {
+        background: linear-gradient(135deg, $theme-colour-9, 15%, $accent-colour-2);
+    }
+}
+
+.institute {
+    @include spacing(0, 0.1rem);
+    @include colourWithOpacity(color, $light, 0.8);
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.course {
+    @include spacing(0, 0.2rem);
+    @include colourWithOpacity(color, $white);
+    font-weight: 600;
+    letter-spacing: -0.5px;
+}
+
+.header {
+    width: 60%;
+    position: relative;
+    z-index: 1;
+}
+
+.tag {
+    @include colourWithOpacity(background-color, $light, 0.9);
+    position: absolute;
+    top: 0;
+    right: 1.5rem;
+    width: 4rem;
+    min-height: 5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+
+    .tagTitle {
+        letter-spacing: -0.5px;
+        font-size: 0.75rem;
+        font-weight: 400;
+        text-transform: uppercase;
+    }
+
+    .tagValue {
+        letter-spacing: -1px;
+        font-size: 0.9rem;
+        font-weight: 600;
+    }
+}
+
+.footer {
+    flex: 1;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.duration,
+.location {
+    @include colourWithOpacity(color, $light, 0.75);
+    font-size: 0.9rem;
+    font-weight: 400;
+    letter-spacing: -0.5px;
+}
+
+.courseImage {
+    position: absolute;
+    opacity: 0.15;
+}

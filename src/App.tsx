@@ -1,20 +1,20 @@
-import Header from './components/Header';
-import Description from './components/Description';
-import Ripples from './components/Ripples';
 import './App.scss';
-import ShootingStars from './components/ShootingStars';
-import SocialMediaIcons from './components/SocialMediaIcons';
+import Introduction from './components/Introduction';
+import Education from './components/Education';
+import Experience from './components/Experience';
+import Projects from './components/Projects';
+import Navbar from './components/Navbar';
 
 function App() {
     return (
         <div className="app">
-            <ShootingStars />
+            <Navbar />
             <div className="contentContainer">
-                <Header />
-                <Description />
-                <SocialMediaIcons />
+                <Introduction />
+                <Education />
+                <Experience />
+                <Projects />
             </div>
-            <Ripples />
         </div>
     );
 }

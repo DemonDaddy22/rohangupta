@@ -1,0 +1,80 @@
+@import '../../resources/theme.scss';
+@import '../../utils/mixins.scss';
+
+.profilePictureContainer {
+    position: relative;
+}
+
+.profilePicture {
+    position: relative;
+    border-radius: 0.25rem;
+    width: 20rem;
+    object-fit: contain;
+    z-index: 1;
+}
+
+.patternCirclesContainer {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+    left: 50%;
+    bottom: -3rem;
+    transform: translateX(-50%);
+    
+    @media (min-width: 900px) {
+        transform: translateX(0);
+        left: initial;
+        bottom: initial;
+        top: -1.5rem;
+        right: 0.5rem;
+    }
+
+    .patternCircle {
+        @include circle(1rem);
+
+        &:nth-of-type(1) {
+            @include colourWithOpacity(background-color, $theme-colour-1);
+        }
+
+        &:nth-of-type(2) {
+            @include colourWithOpacity(background-color, $theme-colour-5);
+        }
+
+        &:nth-of-type(3) {
+            @include colourWithOpacity(background-color, $theme-colour-3);
+        }
+    }
+}
+
+.patternSquare {
+    position: absolute;
+    width: 20rem;
+    height: 23rem;
+    top: 0;
+    border-radius: 0.25rem;
+}
+
+.patternSquareDefault {
+    composes: patternSquare;
+    transform: scale(1.05);
+    @include colourWithOpacity(background-color, $theme-colour-6, 0.9);
+
+    @media (min-width: 900px) {
+        transform: scale(1);
+        top: 2rem;
+        left: -2rem;
+    }
+}
+
+.patternSquareLighter {
+    composes: patternSquare;
+    transform: scale(1.1);
+    @include colourWithOpacity(background-color, $theme-colour-5, 0.05);
+
+    @media (min-width: 900px) {
+        transform: scale(1);
+        top: 4rem;
+        left: -4rem;
+    }
+}
