@@ -1,0 +1,49 @@
+@import '../resources/theme.scss';
+
+@mixin spacing ($padding: 0, $margin: 0) {
+    padding: $padding;
+    margin: $margin;
+}
+
+@mixin square ($size, $bg: none, $borderRadius: 0) {
+    height: $size;
+    width: $size;
+
+    @if $bg != none {
+        background: $bg;
+    }
+
+    @if $borderRadius != 0 {
+        border-radius: $borderRadius;
+    }
+}
+
+@mixin circle ($size, $bg: none) {
+    @include square($size, $bg, 50%);
+}
+
+@mixin theme($property, $key, $inlinePre: null, $inlinePost: null, $transition: 0) {
+    @each $theme in $themes {
+        $value: map-get($theme, $key);
+
+        @if ($theme == $DARK) {
+            @at-root [theme-mode='DARK'] #{&} {
+                #{$property}: #{$inlinePre} #{$value} #{$inlinePost};
+            }
+        }
+
+        @else {
+            @at-root :root #{&} {
+                #{$property}: #{$inlinePre} #{$value} #{$inlinePost};
+            }
+        }
+
+        @if $transition != 0 {
+            transition: #{$property} $transition;
+        }
+    }
+}
+
+@mixin colourWithOpacity ($property, $color, $opacity: 1) {
+    #{$property}: rgba($color: $color, $alpha: $opacity);
+}
