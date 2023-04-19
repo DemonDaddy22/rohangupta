@@ -1,34 +1,28 @@
+@import '../../resources/theme.scss';
+@import '../../utils/mixins.scss';
+
 .descriptionContainer {
     margin-top: 2rem;
 
-    @media (min-width: 900px) {
-        margin-top: 1.5rem;
-    }
-
-    @media (min-width: 1500px) {
+    @media (min-width: 1200px) {
         margin-top: 1rem;
     }
 
-    .primaryText {
-        color: #C3E6D1;
-        font-size: 4rem;
-        font-weight: 700;
-        letter-spacing: -0.5px;
-        line-height: 4.25rem;
-
-        @media (min-width: 1200px) {
-            font-size: 3rem;
-        }
-    }
-
     .secondaryText {
-        color: #c8dfd1;
+        @include colourWithOpacity(color, $theme-colour-6);
         font-size: 0.9rem;
         line-height: 1.35rem;
         margin-top: 0.5rem;
+        font-weight: 400;
 
         @media (min-width: 1500px) {
-            font-size: 1rem;
+            font-size: 0.95rem;
         }
+    }
+
+    .highlight {
+        @include colourWithOpacity(background-color, $theme-colour-5, 0.25);
+        @include spacing(0 2px);
+        border-radius: 2px;
     }
 }

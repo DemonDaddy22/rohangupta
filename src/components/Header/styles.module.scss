@@ -1,21 +1,30 @@
+@import '../../resources/theme.scss';
+@import '../../utils/mixins.scss';
+
 .headerContainer {
 
     .secondaryText {
-        color: #c8dfd1;
-        font-weight: 600;
-        font-size: 0.9rem;
+        @include colourWithOpacity(color, $theme-colour-2);
+        font-weight: 300;
+        font-size: 0.85rem;
 
-        @media (min-width: 1500px) {
-            font-size: 0.95rem;
+        @media (min-width: 1200px) {
+            font-size: 0.9rem;
         }
     }
 
     .primaryText {
-        color: #58F898;
-        font-size: 5rem;
-        font-weight: 700;
+        @include colourWithOpacity(color, $theme-colour-1);
+        font-family: 'Charmonman', cursive;
+        font-weight: 900;
+        font-size: 4rem;
         letter-spacing: -0.5px;
-        line-height: 4.75rem;
-        margin-top: 0.25rem;
+        line-height: 5rem;
+        margin-top: 0.5rem;
+
+        @media (min-width: 1200px) {
+            font-size: 6rem;
+            line-height: 6rem;
+        }
     }
 }
