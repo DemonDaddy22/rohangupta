@@ -20,10 +20,10 @@ const Navbar: React.FC<Props> = () => {
 
     const handleNavItemClick = useCallback((item: string) => {
         setSelectedItem(item);
-        const section = document.getElementById(item);
         if (item === NAV_ITEMS.PROFILE) {
             window?.scrollTo({ top: 0, behavior: 'smooth' });
         } else {
+            const section = document.getElementById(item);
             section?.scrollIntoView({ behavior: 'smooth' });
         }
     }, []);
